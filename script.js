@@ -22,14 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let achievementsUnlocked = []; // Track unlocked achievements
     
     // Image sources for the memory game (nature-themed for calmness)
-    const images = [
-        'https://upload.wikimedia.org/wikipedia/commons/b/bf/Golden_Gate_Bridge_as_seen_from_Battery_East.jpg', // Golden Gate Bridge
-        'https://upload.wikimedia.org/wikipedia/commons/0/04/Beach_sounds_South_Carolina.ogg', // Beach
-        'https://upload.wikimedia.org/wikipedia/commons/c/c5/Moraine_Lake_17092005.jpg', // Mountain
-        'https://upload.wikimedia.org/wikipedia/commons/3/3a/Bray%27s_Bayou_through_Braeswood.jpg', // Forest
-        'https://upload.wikimedia.org/wikipedia/commons/5/57/Rose_Amber_Flush.jpg', // Flower
-        'https://upload.wikimedia.org/wikipedia/commons/b/bb/Kittyply_edit.jpg' // Cat (for cuteness)
-    ];
+    const images = ['🌲', '🌊', '🌞', '🌈', '🌺', '🦋'];
 
     // Update the timer display
     function updateTimer() {
@@ -68,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create the memory game
     function createMemoryGame() {
         gameContainer.innerHTML = '';
+        gameContainer.className = ''; // Clear all classes
         gameContainer.classList.add('memory-game');
         
         // Create pairs of cards (12 cards = 6 pairs)
@@ -83,14 +77,14 @@ document.addEventListener('DOMContentLoaded', function() {
             card.dataset.image = img;
             
             // Card inner structure (front and back)
-            card.innerHTML = `
-                <div class="memory-card-inner">
-                    <div class="memory-card-back">?</div>
-                    <div class="memory-card-front">
-                        <img src="${img}" alt="Card image">
-                    </div>
-                </div>
-            `;
+      card.innerHTML = `
+        <div class="memory-card-inner">
+            <div class="memory-card-back">?</div>
+            <div class="memory-card-front">
+                <span class="emoji-image">${img}</span>
+            </div>
+        </div>
+      `;
             
             // Add click event
             card.addEventListener('click', flipCard);
