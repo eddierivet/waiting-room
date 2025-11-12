@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waiting Room Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background elements -->
+    <div class="floating-element floating-1"></div>
+    <div class="floating-element floating-2"></div>
+    <div class="floating-element floating-3"></div>
+    
+    <div class="container">
+        <h1>Calm Space</h1>
+        <div id="wait-time">
+            <h3>Estimated wait time:</h3>
+            <div class="timer-container">
+                <span id="timer" class="timer-display">15:00</span>
+                <div class="timer-progress-container">
+                    <div id="timer-progress-bar" class="timer-progress-bar"></div>
+                </div>
+            </div>
+            <p id="waiting-message">Your provider will be with you soon</p>
+        </div>
+        <div id="game-container">
+            <!-- Game will be inserted here -->
+        </div>
+        <div id="breathing-container" class="hidden">
+            <h2>4-7-8 Breathing Exercise</h2>
+            <p class="breathing-intro">This technique helps reduce anxiety and promote calmness</p>
+            <div id="breathing-circle" class="breathing-circle"></div>
+            <p id="breathing-instruction">Inhale...</p>
+            <p class="breathing-tip">Focus on the expanding and contracting circle</p>
+        </div>
+        <button id="start-button">Start Game</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
